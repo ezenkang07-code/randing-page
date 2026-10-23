@@ -27,7 +27,7 @@ body{
     background: rgba(0,0, 0, 0.7);
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     z-index: 999;
     display: flex;
     align-items: center;
@@ -231,6 +231,9 @@ header{
 .modal-box{
     display: none;
     position: absolute;
+    inset:0;
+    width: 100%;
+    height: 100%;
     z-index: 10;
 }
 .mo-product-box{
@@ -239,11 +242,11 @@ header{
     width: 100%;
     height: 100%;
     background: rgba(8, 8, 8, 0.9);
-    padding:clamp(1.25rem, 2vw, 1.9rem) 
-            clamp(1.5rem, 4vw, 3.6rem) 
-            clamp(4rem, 10vw, 10.9rem) 
-            clamp(1.5rem, 4vw, 3.6rem);
+    padding: 0 clamp(1.25rem, 4vw, 3.75rem);
     border-radius: clamp(1.25rem, 2vw, 1.875rem);
+}
+.mo-product-text-1 .sub-text{
+    font-weight: 300;
 }
 .mo-product-content{
     gap: clamp(1.25rem, 2vw, 1.875rem);
@@ -259,45 +262,30 @@ header{
     height: clamp(0.25rem, 0.4vw, 0.313rem);
     background-color: #FFFBDB;
 }
-.a-w-90{
+.a-color{
+    background-color: #F9433E;
+}
+.l-color{
+    background-color: #FFBF3F;
+}
+.b-color{
+    background-color: #75172B;
+}
+.w-90{
     width: clamp(3.75rem, 9vw, 5.625rem);
     height: clamp(0.25rem, 0.4vw, 0.313rem);
-    background-color: #F9433E;
 }
-.a-w-60{
+.w-60{
     width: clamp(2.5rem, 6vw, 3.75rem);
     height: clamp(0.25rem, 0.4vw, 0.313rem);
-    background-color: #F9433E;
 }
-.a-w-120{
+.w-120{
     width: clamp(5rem, 12vw, 7.5rem);
     height: clamp(0.25rem, 0.4vw, 0.313rem);
-    background-color: #F9433E;
 }
-.l-w-60{
-    width: clamp(2.5rem, 6vw, 3.75rem);
-    height: clamp(0.25rem, 0.4vw, 0.313rem);
-    background-color: #FFBF3F;
-}
-.l-w-120{
-    width: clamp(5rem, 12vw, 7.5rem);
-    height: clamp(0.25rem, 0.4vw, 0.313rem);
-    background-color: #FFBF3F;
-}
-.l-w-150{
+.w-150{
     width: clamp(6.25rem, 15vw, 9.375rem);
     height: clamp(0.25rem, 0.4vw, 0.313rem);
-    background-color: #FFBF3F;
-}
-.b-w-120{
-    width: clamp(5rem, 12vw, 7.5rem);
-    height: clamp(0.25rem, 0.4vw, 0.313rem);
-    background-color: #75172B;
-}
-.b-w-90{
-    width: clamp(3.75rem, 9vw, 5.625rem);
-    height: clamp(0.25rem, 0.4vw, 0.313rem);
-    background-color: #75172B;
 }
 .mo-product-container{
     flex-direction: column;
@@ -327,6 +315,7 @@ header{
     background: #1a1a1a;
     border-radius: 1.875rem;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .product-apple{
     width: 100%;
@@ -632,15 +621,17 @@ header{
     padding: clamp(0.75rem, 1.5vw, 0.938rem);
 }
 .insta-header .main-font{
-    font-size: 0.5rem;
+    font-size: 0.75rem;;
 }
 
 .profile-box{
     width: clamp(1.625rem, 2.5vw, 1.875rem);
     height: clamp(1.625rem, 2.5vw, 1.875rem);
     padding: 0.563rem 0.063rem 0.625rem 0.125rem;
-    background: #15A5B6;
+    background: #E53C30;
     color: #000;
+    align-items: center;
+    justify-content: center;
     border-radius: 6.25rem;
 }
 .profile-name{

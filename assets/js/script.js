@@ -16,15 +16,13 @@ $(".mo-text").click(function(){
 });
 
 
-$(".product-arrow").click(function(){
-    $(".modal-box").fadeIn();
-})
-$(".modal-box").mouseleave(function(){
-    $(".modal-box").fadeOut();
-})
 
-
-
+$(".product-arrow").click(function () {
+    $(this).closest(".box").find(".modal-box").fadeIn();
+});
+$(".modal-box").mouseleave(function () {
+    $(this).fadeOut();
+});
 
 
 
@@ -41,3 +39,23 @@ $(function(){
 
 
 
+
+$('.footer-arrow').click(function(){
+    alert('이메일 전송이 완료되었습니다!');
+})
+
+$('.mo-btn-r').click(function(){
+    $(location).attr('href', 'https://www.google.com');
+})
+
+
+
+      var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
