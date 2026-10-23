@@ -549,7 +549,7 @@ header{
 .card-img-reverse img{
     padding: clamp(0.75rem, 1.5vw, 1.25rem);
     border-radius: clamp(1.5rem, 3vw, 2.5rem);
-    height: auto;
+    height: auto;  
 }
 .content-header-reverse{
     flex-direction: column;
