@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIPD</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -339,8 +340,9 @@
                 </div>
 
                 <div class="text d-flex">
-                    <div class="content-text d-flex">
-                        <p class="font-size-20">상단</p>
+                    <div class="content-text d-flex" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
+                        <p class="font-size-20 ">상단</p>
                         <svg width="150" height="1" viewBox="0 0 150 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="150" height="1" fill="#FBF8EC" />
                         </svg>
@@ -353,7 +355,8 @@
                         </div>
                     </div>
 
-                    <div class="content-text d-flex">
+                    <div class="content-text d-flex" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">
                         <p class="font-size-20">중단</p>
                         <svg width="150" height="1" viewBox="0 0 150 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="150" height="1" fill="#FBF8EC" />
@@ -367,7 +370,8 @@
                         </div>
                     </div>
 
-                    <div class="content-text d-flex">
+                    <div class="content-text d-flex" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom">
                         <p class="font-size-20">하단</p>
                         <svg width="150" height="1" viewBox="0 0 150 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="150" height="1" fill="#FBF8EC" />
@@ -432,7 +436,9 @@
 
     <!-- about -->
     <section class="about d-flex" id="about">
-        <div class="about-card d-flex">
+        <div class="about-card d-flex" data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
             <div class="card-img">
                 <img src="assets/images/pop-1-img.jpg" alt="팝업1">
             </div>
@@ -459,7 +465,9 @@
             </div>
         </div>
 
-        <div class="about-card-reverse d-flex">
+        <div class="about-card-reverse d-flex" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
             <div class="card-content-reverse d-flex">
                 <div class="main-content d-flex">
                     <div class="content-header-reverse d-flex">
@@ -478,13 +486,15 @@
                     </div>
                 </div>
             </div>
-            <div class="card-img-reverse d-flex">
+            <div class="card-img-reverse d-flex" >
                 <img src="assets/images/flagship-img.jpg" alt="플래그쉽">
             </div>
 
         </div>
 
-        <div class="about-card d-flex">
+        <div class="about-card d-flex" data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
             <div class="card-img">
                 <img src="assets/images/pop-2-img.jpg" alt="팝업2">
             </div>
@@ -514,7 +524,9 @@
         </div>
         </div>
 
-        <div class="about-card-reverse-2 d-flex">
+        <div class="about-card-reverse-2 d-flex" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
             <div class="card-content-reverse-2 d-flex">
                 <div class="main-content-2 d-flex">
                     <div class="content-header-reverse d-flex">
@@ -1043,11 +1055,17 @@
 
     </section>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <script>
+  AOS.init();
+</script>
 </body>
 
 </html>
