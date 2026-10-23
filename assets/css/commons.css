@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+@font-face {
+    font-family: 'SpokaHanSansNeo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Thin.woff') format('woff');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SpokaHanSansNeo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SpokaHanSansNeo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SpokaHanSansNeo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SpokaHanSansNeo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+body{
+    font-family: 'SpokaHanSansNeo';
+    background-color: #070402;
+    color: #FBF8EC;
+    text-decoration: none;
+
+    font-size: 16px;
+}
+.color-black{
+    color: #070402;
+}
+.font-face{
+    font-family: 'Dela Gothic One';
+}
+
+.d-flex{
+    display: flex;
+}
+.main-font{
+    font-size: 8.125rem;
+    font-family: 'Dela Gothic One';
+    line-height: 1.4;
+}
+.font-size-12{
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-weight: 300;
+}
+.font-size-16{
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.font-size-20{
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.font-size-24{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
