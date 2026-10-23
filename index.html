@@ -12,7 +12,7 @@
 <body>
 
     <!-- kv -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="modal-bg">
             <div class="modal-content d-flex font-size-16">
                 <div class="mo-title d-flex">
@@ -60,24 +60,25 @@
         <div class="logo font-face">
             <h1>SIPD</h1>
         </div>
-        <div class="navi">
-            <ul class="mo-gnb font-size-16">
-                <li><a class="btn-a">Home</a></li>
-                <li><a class="btn-b">Brand</a></li>
-                <li><a class="btn-a">Product</a></li>
-                <li><a class="btn-b">About</a></li>
+        <nav class="navi" aria-label="주요 메뉴">
+            <ul class="mo-gnb font-size-16" id="main-navigation">
+                <li><a class="btn-a" href="#home">Home</a></li>
+                <li><a class="btn-b" href="#brand">Brand</a></li>
+                <li><a class="btn-a" href="#product">Product</a></li>
+                <li><a class="btn-b" href="#about">About</a></li>
             </ul>
-        </div>
-        <div class="mo-navi">
-            <img src="assets/images/icon/mo-navi.svg" alt="메뉴">
-        </div>
+        </nav>
+        <button class="mo-navi" type="button" aria-label="메뉴 열기" aria-expanded="false"
+            aria-controls="main-navigation">
+            <img src="assets/images/icon/mo-navi.svg" alt="">
+        </button>
         <div class="pc-navi">
             <h1>　</h1>
         </div>
     </header>
 
     <!-- brand -->
-    <section class="brand">
+    <section class="brand" id="brand">
         <div class="container d-flex">
             <div class="brand-img ">
                 <img src="assets/images/Brand-img.png" alt="브랜드 이미지">
@@ -118,7 +119,7 @@
 
 
     <!-- product -->
-    <section class="product">
+    <section class="product" id="product">
         <div class="container d-flex">
 
             <div class="box d-flex">
@@ -430,7 +431,7 @@
 
 
     <!-- about -->
-    <section class="about d-flex">
+    <section class="about d-flex" id="about">
         <div class="about-card d-flex">
             <div class="card-img">
                 <img src="assets/images/pop-1-img.jpg" alt="팝업1">

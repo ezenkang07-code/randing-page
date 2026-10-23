@@ -142,6 +142,7 @@ header{
     top: 0;
     background-color: #070402;
     padding-inline: clamp(1rem, 3vw, 2rem);
+    --header-height: clamp(3.75rem, 5vw, 4.6875rem);
 }
 .logo{
     padding: 0.5rem clamp(0.5rem, 1.5vw, 1.25rem);
@@ -160,6 +161,11 @@ header{
 }
 .mo-navi{
     display: none;
+}
+.mo-navi img{
+    display: block;
+    width: 1rem;
+    height: 0.75rem;
 }
 .mo-gnb{
     display: flex;
@@ -809,42 +815,78 @@ header{
     }
 }
 
-/* header */
-@media(max-width:1024px){
-    header{
+/* responsive navigation */
+@media (max-width: 1024px) {
+    header {
         width: 100%;
-    }
-    .pc-navi{
-        display: none;
-    }
-    .mo-navi{
-        display: block;
         position: fixed;
-        cursor: pointer;
-        z-index: 10001;
-    }
-    .navi .d-block{
-        display: flex;
-        inset: 0;
-        z-index: 10000;
-        justify-content: center;
-        align-items: center;
-    }
-    .mo-gnb{
-        display: none;
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        flex-direction: column;
-        background-color: #1a1a1a;
         top: 0;
         left: 0;
-        text-align: center;
-        justify-content: center;
-        
+        z-index: 1000;
     }
-    .d-block{
+    .pc-navi {
+        display: none;
+    }
+    .mo-navi {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .mo-navi:focus-visible,
+    .mo-gnb a:focus-visible {
+        outline: 2px solid #E53C30;
+        outline-offset: 4px;
+    }
+    .mo-gnb {
+        display: none;
+        position: fixed;
+        inset: 0;
+        width: auto;
+        height: auto;
+        padding: 2rem 1.5rem;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(1.5rem, 5vh, 3rem);
+        overflow-y: auto;
+        background-color: #1a1a1a;
+        text-align: center;
+        z-index: 0;
+    }
+    .logo {
+        position: relative;
+        z-index: 1;
+    }
+    .mo-gnb.is-open {
         display: flex;
+    }
+    .mo-gnb li {
+        border-bottom: 0;
+        padding-block: 0.5rem;
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+    .mo-gnb li::after {
+        bottom: 0;
+    }
+    #home,
+    #brand,
+    #product,
+    #about {
+        scroll-margin-top: var(--header-height);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding-inline: 1rem;
     }
 }
 

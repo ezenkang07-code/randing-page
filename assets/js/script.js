@@ -29,9 +29,34 @@ $(".modal-box").mouseleave(function () {
 
 
 
-$(function(){
-    $(".mo-navi").click(function(){
-        $(".mo-gnb").toggleClass("d-block");
+$(function () {
+    const $menuButton = $(".mo-navi");
+    const $navigation = $(".mo-gnb");
+
+    function setMenuOpen(isOpen) {
+        $navigation.toggleClass("is-open", isOpen);
+        $menuButton.attr("aria-expanded", isOpen);
+        $menuButton.attr("aria-label", isOpen ? "메뉴 닫기" : "메뉴 열기");
+    }
+
+    $menuButton.on("click", function () {
+        setMenuOpen($menuButton.attr("aria-expanded") !== "true");
+    });
+
+    $navigation.find("a").on("click", function () {
+        setMenuOpen(false);
+    });
+
+    $(document).on("keydown", function (event) {
+        if (event.key === "Escape") {
+            setMenuOpen(false);
+        }
+    });
+
+    $(window).on("resize", function () {
+        if (window.matchMedia("(min-width: 1025px)").matches) {
+            setMenuOpen(false);
+        }
     });
 });
 
