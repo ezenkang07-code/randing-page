@@ -819,9 +819,9 @@ header{
     }
     .mo-navi{
         display: block;
-        position: sticky;
+        position: fixed;
         cursor: pointer;
-        z-index: 9999;
+        z-index: 10001;
     }
     .navi .d-block{
         display: flex;
@@ -831,14 +831,17 @@ header{
         align-items: center;
     }
     .mo-gnb{
-        width: 100%;
+        display: none;
+        position: fixed;
+        width: 100vw;
         height: 100vh;
         flex-direction: column;
         background-color: #1a1a1a;
+        top: 0;
         left: 0;
         text-align: center;
         justify-content: center;
-        display: none;
+        
     }
     .d-block{
         display: flex;
