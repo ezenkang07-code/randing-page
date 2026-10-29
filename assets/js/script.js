@@ -79,8 +79,78 @@ $('.mo-btn-r').click(function(){
         slidesPerView: 4,
         spaceBetween: 30,
         loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
         },
       });
+
+
+/* brand — GSAP ScrollTrigger */
+(function () {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  var brandSection = document.querySelector('#brand');
+  if (!brandSection) return;
+
+  var brandImg = brandSection.querySelector('.brand-img img');
+  var brandInfos = brandSection.querySelectorAll('.brand-info');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduceMotion) {
+    gsap.set([brandImg].concat(Array.from(brandSection.querySelectorAll('.brand-title h1, .brand-desc p'))), {
+      clearProps: 'all'
+    });
+    return;
+  }
+
+  var tl = gsap.timeline({
+    defaults: { ease: 'power3.out' },
+    scrollTrigger: {
+      trigger: brandSection,
+      start: 'top 70%',
+      once: true
+    }
+  });
+
+  if (brandImg && window.getComputedStyle(brandSection.querySelector('.brand-img')).display !== 'none') {
+    gsap.set(brandImg, { opacity: 0, scale: 1.12, y: 48 });
+    tl.to(brandImg, {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      duration: 1.15
+    }, 0);
+  }
+
+  brandInfos.forEach(function (info, index) {
+    var title = info.querySelector('.brand-title h1');
+    var paragraphs = info.querySelectorAll('.brand-desc p');
+    var startAt = index === 0 ? 0.15 : 0.55;
+
+    if (title) {
+      gsap.set(title, { opacity: 0, y: 56 });
+      tl.to(title, {
+        opacity: 1,
+        y: 0,
+        duration: 0.85
+      }, startAt);
+    }
+
+    if (paragraphs.length) {
+      gsap.set(paragraphs, { opacity: 0, y: 36 });
+      tl.to(paragraphs, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        stagger: 0.12
+      }, startAt + 0.18);
+    }
+  });
+})();
